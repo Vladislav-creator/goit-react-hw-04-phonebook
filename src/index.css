@@ -1,0 +1,7 @@
+@import-normalize; /* bring in normalize.css styles */
+
+body {
+  background: url(../public/women-with-phone.jpg) center / cover no-repeat;
+  min-height: 100vh;
+ 
+}
