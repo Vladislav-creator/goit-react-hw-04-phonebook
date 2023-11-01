@@ -24,7 +24,7 @@ const App = () => {
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  // Добавление нового контакта в список контактов
+ //Добавление нового контакта в список контактов
   const addContact = contact => {
     const isInContacts = contacts.some(
       ({ name }) => name.toLowerCase() === contact.name.toLowerCase()
@@ -38,6 +38,8 @@ const App = () => {
       prevState = [{ id: nanoid(), ...contact }, ...prevState],
     );
   };
+
+ 
 
   // Изменение значения фильтра
   const changeFilter = event => {

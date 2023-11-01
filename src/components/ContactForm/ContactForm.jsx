@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { Form, Label, Button, Input } from './ContactForm.styled';
 
-const ContactForm = (onSubmit) => {
+const ContactForm = ({onSubmit}) => {
 
 const [name, setName] = useState('')
 const [number, setNumber] = useState('')
@@ -15,13 +15,13 @@ const [number, setNumber] = useState('')
     event.preventDefault();
 
     // Вызов функции onSubmit из родительского компонента с передачей объекта контакта
-    onSubmit({ name: name, number: number });
+    onSubmit({ name, number });
 
     // Сброс состояния формы
     reset();
   };
 
-  // Обработка изменения значений полей формы
+ // Обработка изменения значений полей формы
   const handleChange = event => {
         const { name, value } = event.target;
   switch(name){
@@ -36,7 +36,6 @@ const [number, setNumber] = useState('')
    default: return;
   }
 }
-
 
   // Сброс состояния формы
  const  reset = () => {
